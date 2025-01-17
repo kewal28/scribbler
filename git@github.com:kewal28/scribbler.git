@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "name": "New JSNB",
+    "language_info": {
+      "name": "JavaScipt",
+      "version": "8.0"
+    }
+  },
+  "jsnbversion": "v0.1",
+  "cells": [
+    {
+      "code": "Certainly! The regular expression `/^\\+?[1-9][\\d]*$/` is used to match positive integers, optionally prefixed with a plus sign (`+`). Here's a breakdown of the components:\n\n1. **`^`**: Asserts the position at the start of the string.\n2. **`\\+?`**: Matches an optional plus sign (`+`). The `\\` is used to escape the `+` character, and the `?` means that the preceding character (the escaped `+`) is optional.\n3. **`[1-9]`**: Matches any digit from 1 to 9. This ensures that the number does not start with 0.\n4. **`[\\d]*`**: Matches zero or more digits (`\\d` is shorthand for `[0-9]`). The `*` means that the preceding character class can appear zero or more times.\n5. **`$`**: Asserts the position at the end of the string.\n\n### Examples:\n- **`\"+123\"`**: Matches (optional `+`, followed by digits starting from 1-9).\n- **`\"456\"`**: Matches (starts with a digit from 1-9, followed by more digits).\n- **`\"+0\"`**: Does not match (starts with 0).\n- **`\"0123\"`**: Does not match (starts with 0).\n- **`\"abc\"`**: Does not match (contains non-digit characters).\n\nThis regex ensures that the number is a positive integer and prevents it from starting with zero, which is typically not desired in scenarios where leading zeros are invalid.",
+      "status": "",
+      "output": "<p>Certainly! The regular expression <code>/^\\+?[1-9][\\d]*$/</code> is used to match positive integers, optionally prefixed with a plus sign (<code>+</code>). Here's a breakdown of the components:</p>\n<ol>\n<li><strong><code>^</code></strong>: Asserts the position at the start of the string.</li>\n<li><strong><code>\\+?</code></strong>: Matches an optional plus sign (<code>+</code>). The <code>\\</code> is used to escape the <code>+</code> character, and the <code>?</code> means that the preceding character (the escaped <code>+</code>) is optional.</li>\n<li><strong><code>[1-9]</code></strong>: Matches any digit from 1 to 9. This ensures that the number does not start with 0.</li>\n<li><strong><code>[\\d]*</code></strong>: Matches zero or more digits (<code>\\d</code> is shorthand for <code>[0-9]</code>). The <code>*</code> means that the preceding character class can appear zero or more times.</li>\n<li><strong><code>$</code></strong>: Asserts the position at the end of the string.</li>\n</ol>\n<h3>Examples:</h3>\n<ul>\n<li><strong><code>\"+123\"</code></strong>: Matches (optional <code>+</code>, followed by digits starting from 1-9).</li>\n<li><strong><code>\"456\"</code></strong>: Matches (starts with a digit from 1-9, followed by more digits).</li>\n<li><strong><code>\"+0\"</code></strong>: Does not match (starts with 0).</li>\n<li><strong><code>\"0123\"</code></strong>: Does not match (starts with 0).</li>\n<li><strong><code>\"abc\"</code></strong>: Does not match (contains non-digit characters).</li>\n</ul>\n<p>This regex ensures that the number is a positive integer and prevents it from starting with zero, which is typically not desired in scenarios where leading zeros are invalid.</p>\n",
+      "type": "html"
+    },
+    {
+      "code": "brandList4 = '+98k';\n\n//Approch 1\nisPositiveInteger(brandList4);\n\nfunction isPositiveInteger(s) {\n  return /^\\+?[1-9][\\d]*$/.test(s);\n}",
+      "status": "[10]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "false <br>",
+      "type": "code"
+    },
+    {
+      "code": "//Approch 2\nbrandList4 = '+98k';\n\nisPositiveInteger(brandList4);\n\nfunction isPositiveInteger(s) {\n  return (+s > 0);\n}",
+      "status": "[11]<br><span style=\"font-size:8px\">0ms<span></span></span>",
+      "output": "false <br>",
+      "type": "code"
+    }
+  ],
+  "source": "https://github.com/gopi-suvanam/scribbler",
+  "run_on_load": false
+}
